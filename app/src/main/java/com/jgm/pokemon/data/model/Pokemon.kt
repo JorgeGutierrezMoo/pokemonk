@@ -1,5 +1,6 @@
 package com.jgm.pokemon.data.model
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
 data class Pokemon(
@@ -15,6 +16,17 @@ data class PokemonList(
 
     @SerializedName("results")
     val pokemonResultsList: List<Pokemon> = listOf()
+
+)
+
+//Room
+@Entity
+data class PokemonEntity(
+
+    @SerializedName("name")
+    val name: String = "",
+    @SerializedName("url")
+    val url: String = ""
 
 )
 
