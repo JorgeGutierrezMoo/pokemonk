@@ -31,3 +31,17 @@ data class PokemonEntity(
     val url: String = ""
 
 )
+
+fun List<PokemonEntity>.toPokemonList(): PokemonList{
+
+    val resultList = mutableListOf<Pokemon>()
+    this.forEach{ pokemonEntity ->
+        resultList.add(pokemonEntity.toPokemon())
+    }
+    return PokemonList(resultList)
+}
+
+fun PokemonEntity.toPokemon(): Pokemon = Pokemon(
+    this.name,
+    this.url
+)

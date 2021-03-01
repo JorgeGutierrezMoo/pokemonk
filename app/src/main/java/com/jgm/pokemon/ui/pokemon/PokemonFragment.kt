@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -14,8 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.jgm.pokemon.R
 import com.jgm.pokemon.core.Resource
 import com.jgm.pokemon.data.model.Pokemon
-import com.jgm.pokemon.data.remote.PokemonDataSource
-import com.jgm.pokemon.databinding.FragmentLoginBinding
+import com.jgm.pokemon.data.remote.RemotePokemonDataSource
 import com.jgm.pokemon.databinding.FragmentPokemonBinding
 import com.jgm.pokemon.presentation.PokemonViewModel
 import com.jgm.pokemon.presentation.PokemonViewModelFactory
@@ -31,7 +29,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon),
     private val viewModel by viewModels<PokemonViewModel> {
         PokemonViewModelFactory(
             PokemonRepositoryImplements(
-                PokemonDataSource(RetrofitClient.webservice)
+                RemotePokemonDataSource(RetrofitClient.webservice)
             )
         )
     }
