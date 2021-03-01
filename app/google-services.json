@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "628254003500",
+    "project_id": "pokemonapp-c0b8d",
+    "storage_bucket": "pokemonapp-c0b8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628254003500:android:cde34744da4cd16a089c89",
+        "android_client_info": {
+          "package_name": "com.jgm.pokemon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628254003500-dg5pabje52egttdv4nnt96a8ae8mg4m8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzG2JdhWwevCiK7gEI_Rb2IwCTHBynvb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628254003500-dg5pabje52egttdv4nnt96a8ae8mg4m8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
