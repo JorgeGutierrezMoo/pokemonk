@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.jgm.pokemon.R
 import com.jgm.pokemon.core.Resource
+import com.jgm.pokemon.data.local.AppDatabase
+import com.jgm.pokemon.data.local.LocalPokemonDataSource
 import com.jgm.pokemon.data.model.Pokemon
 import com.jgm.pokemon.data.remote.RemotePokemonDataSource
 import com.jgm.pokemon.databinding.FragmentPokemonBinding
@@ -29,7 +31,8 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon),
     private val viewModel by viewModels<PokemonViewModel> {
         PokemonViewModelFactory(
             PokemonRepositoryImplements(
-                RemotePokemonDataSource(RetrofitClient.webservice)
+                RemotePokemonDataSource(RetrofitClient.webservice),
+                LocalPokemonDataSource(AppDatabase.getDatabase(requireContext()).pokemonDao())
             )
         )
     }

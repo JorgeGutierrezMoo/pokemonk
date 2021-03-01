@@ -15,10 +15,8 @@ data class Pokemon(
 )
 
 data class PokemonList(
-
     @SerializedName("results")
     val pokemonResultsList: List<Pokemon> = listOf()
-
 )
 
 //Room
@@ -42,6 +40,11 @@ fun List<PokemonEntity>.toPokemonList(): PokemonList{
 }
 
 fun PokemonEntity.toPokemon(): Pokemon = Pokemon(
+    this.name,
+    this.url
+)
+
+fun Pokemon.toPokemonEntity(): PokemonEntity = PokemonEntity(
     this.name,
     this.url
 )

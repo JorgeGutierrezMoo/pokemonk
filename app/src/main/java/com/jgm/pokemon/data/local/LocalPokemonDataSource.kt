@@ -4,9 +4,9 @@ import com.jgm.pokemon.data.model.PokemonEntity
 import com.jgm.pokemon.data.model.PokemonList
 import com.jgm.pokemon.data.model.toPokemonList
 
-class LocalMovieDataSource(private val pokemonDao: PokemonDao) {
+class LocalPokemonDataSource(private val pokemonDao: PokemonDao) {
 
-    suspend fun getPokemon(): PokemonList{
+    suspend fun getPokemonLocalDataSource(): PokemonList{
         return pokemonDao.getAllPokemon().toPokemonList()
     }
 
